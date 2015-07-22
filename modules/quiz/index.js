@@ -25,7 +25,7 @@ module.exports = function(app) {
     })
 
     gather("/quiz/question/:number", (req, res) => {
-      var number = req.params('number')
+      var number = req.params['number']
       if(number > 4) return res.status(404).send()
       app.emit('partial.render.ejs', __dirname+"/views/question"+number+".ejs", {}, function(err, content) {
         app.emit('template.render', 'site.onePage', {content: content}, function(err, output) {
