@@ -27,3 +27,25 @@ File Description: Place here your custom CSS styles
 .pb-20 {
   padding-bottom: 20px;
 }
+
+.landing {
+  height: 100%;
+}
+
+.answer-list {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .animated-text h2 + h2 {
+    display: inline;
+    font-size: 1.5em;
+  }
+  .answer-list {
+    text-align: left;
+  }
+  .answer-list li {
+    display: block;
+    padding-left: 100px;
+  }
+}
