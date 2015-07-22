@@ -1,0 +1,24 @@
+{
+  "name": "@seabourne/nams-proposal",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seabourne/nasm-proposal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seabourne/nasm-proposal/issues"
+  },
+  "homepage": "https://github.com/seabourne/nasm-proposal",
+  "dependencies": {
+    "@nxus/core": "^1.0.6",
+    "@nxus/router-express": "^1.0.2"
+  }
+}
