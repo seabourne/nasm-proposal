@@ -8,10 +8,12 @@
 
 module.exports = function(app, loaded) {
   app.on('router.gatherRoutes', function(gather) {
-    gather('/', function(req, res) {
-      app.emit('template.render', 'site.index', {}, function(err, output) {
-        res.send(output)
+    gather('/proposal', function(req, res) {
+      app.emit('partial.render.ejs', __dirname+"/views/proposal.ejs", {}, function(err, content) {
+        app.emit('template.render', 'site.onePage', {content: content}, function(err, output) {
+          res.send(output)
+        })
       })
-    }, 'get')
+    })
   })
 }
