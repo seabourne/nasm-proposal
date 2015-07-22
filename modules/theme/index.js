@@ -13,11 +13,18 @@ var SitesTemplate = function (app, loaded) {
   })
 
   app.on('templates.gatherTemplates', function(gather) {
-    gather('site.index', _render)
+    gather('site.onePage', _render)
+    gather('site.landing', _landing)
   })
 
   var _render = function(opts, callback) {
     var index = __dirname+"/views/index.ejs"
+
+    app.emit('partial.render.ejs', index, opts, callback)
+  }
+
+  var _landing = function(opts, callback) {
+    var index = __dirname+"/views/landing.ejs"
 
     app.emit('partial.render.ejs', index, opts, callback)
   }

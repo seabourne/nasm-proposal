@@ -7,3 +7,23 @@ Created:December 2014
 License URI:http://support.wrapbootstrap.com/
 File Description: Place here your custom CSS styles
 */
+
+.nasm-background {
+  background: url('http://airandspace.si.edu/webimages/highres/WEB10761-2007h.jpg') 50% 0px no-repeat;
+}
+
+.btn-round {
+  padding: 10px 15px;
+}
+
+.dark-translucent-bg a.no-underline {
+  text-decoration: none;
+}
+
+.img-align-center {
+  margin: 0 auto;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
