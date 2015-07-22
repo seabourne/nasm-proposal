@@ -28,10 +28,6 @@ File Description: Place here your custom CSS styles
   padding-bottom: 20px;
 }
 
-.landing {
-  height: 100%;
-}
-
 .answer-list {
   text-align: center;
 }
@@ -47,5 +43,11 @@ File Description: Place here your custom CSS styles
   .answer-list li {
     display: block;
     padding-left: 100px;
+  }
+}
+
+@media (min-height: 535px) {
+  .landing {
+    height: 100%;
   }
 }
