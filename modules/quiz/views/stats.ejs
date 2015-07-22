@@ -4,6 +4,12 @@
       <h2 class="text-center title">Congratulations!</h2>
       <div class="separator"></div>
       <p class="large text-center">You did great! Your score was <strong>3 correct</strong> out of 4.</p>
+      <ul class="list-inline answer-list">
+        <li><span class="btn radius-50 btn-success btn-lg btn-round"><i class="fa fa-check"></i></span> 1934</li>
+        <li><span class="btn radius-50 btn-success btn-lg btn-round"><i class="fa fa-check"></i></span> V2 Rocket</li>
+        <li><span class="btn radius-50 btn-success btn-lg btn-round"><i class="fa fa-check"></i></span> Another Answer</li>
+        <li><span class="btn radius-50 btn-danger btn-lg btn-round"><i class="fa fa-close"></i></span> Wrong Answer</li>
+      </ul>
       <div class="separator"></div>
       <p class="large text-center">We've been recording stats about how people interact with the game. Keep scrolling for a breakdown of the numbers.</p>
     </div>
@@ -13,30 +19,44 @@
     <div class="col-md-3 col-xs-6 text-center">
       <div class="feature-box object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn" data-effect-delay="300">
         <span class="icon dark-bg large circle"><i class="fa fa-diamond"></i></span>
-        <h3><strong>Projects</strong></h3>
+        <h3><strong>Starts</strong></h3>
         <span class="counter counting" data-to="1525" data-speed="5000">1525</span>
       </div>
     </div>
     <div class="col-md-3 col-xs-6 text-center">
       <div class="feature-box object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn" data-effect-delay="300">
         <span class="icon dark-bg large circle"><i class="fa fa-users"></i></span>
-        <h3><strong>Clients</strong></h3>
+        <h3><strong>Completions</strong></h3>
         <span class="counter counting" data-to="1225" data-speed="5000">1225</span>
       </div>
     </div>
     <div class="col-md-3 col-xs-6 text-center">
       <div class="feature-box object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn" data-effect-delay="300">
         <span class="icon dark-bg large circle"><i class="fa fa-cloud-download"></i></span>
-        <h3><strong>Downloads</strong></h3>
+        <h3><strong>Correct Answers</strong></h3>
         <span class="counter counting" data-to="12235" data-speed="5000">12235</span>
       </div>
     </div>
     <div class="col-md-3 col-xs-6 text-center">
       <div class="feature-box object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn" data-effect-delay="300">
         <span class="icon dark-bg large circle"><i class="fa fa-share"></i></span>
-        <h3><strong>Shares</strong></h3>
+        <h3><strong>Incorrect Answers</strong></h3>
         <span class="counter counting" data-to="15002" data-speed="5000">15002</span>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <h2>Question Breakdown</h2>
+      <canvas class="graph bar" id="bars-graph" height="210" width="270"></canvas>
+      <br>
+      <br>
+    </div>
+    <div class="col-md-6  text-center">
+      <h2>Usage this week</h2>
+      <canvas class="graph line" id="lines-graph" height="210" width="270"></canvas>
+      <br>
+      <br>
     </div>
   </div>
   <!-- footer top start -->
@@ -49,7 +69,7 @@
             <div class="row">
               <div class="col-sm-8">
                 <h2>We did this in 2 days.</h2>
-                <p class="large text-center pb-20">Imagine what we could do in 2 months.</p>
+                <h2>Imagine what we could do in 2 months.</h2>
               </div>
               <div class="col-sm-4">
                 <p class="mt-10"><a href="/proposal" class="btn btn-animated btn-lg btn-gray-transparent">Read our proposal<i class="fa fa-arrow-down pl-20"></i></a></p>
