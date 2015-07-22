@@ -9,7 +9,9 @@
 module.exports = function(app, loaded) {
   app.on('router.gatherRoutes', function(gather) {
     gather('/', function(req, res) {
-      res.send('this is the homepage')
-    })
+      app.emit('template.render', 'site.index', {}, function(err, output) {
+        res.send(output)
+      })
+    }, 'get')
   })
 }
