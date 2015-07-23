@@ -12,6 +12,10 @@ File Description: Place here your custom CSS styles
   background: url('http://airandspace.si.edu/webimages/highres/WEB10761-2007h.jpg') 50% 0px no-repeat;
 }
 
+.nasm-background-bottom {
+  background: url('http://airandspace.si.edu/webimages/highres/WEB10761-2007h.jpg') 50% 0 no-repeat;
+}
+
 .btn-round {
   padding: 10px 15px;
 }
