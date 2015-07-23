@@ -7,6 +7,20 @@
  * License URI:http://support.wrapbootstrap.com/
  * File Description: Place here your custom scripts
  */
+
+function addCommas(nStr)
+{
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
+
 (function($){
 
   $(document).ready(function(){
@@ -104,51 +118,51 @@
         labels : ["August","September","October"],
         datasets : [
           {
-            fillColor : "rgba(188,188,188,0.5)",
-            strokeColor : "rgba(188,188,188,0.8)",
-            highlightFill: "rgba(188,188,188,0.75)",
-            highlightStroke: "rgba(188,188,188,1)",
+            fillColor : "#09afdf",
+            strokeColor : "#09afdf",
+            highlightFill: "#6BD5F4",
+            highlightStroke: "#6BD5F4",
             label: "Design",
             data : [
-              10,
-              10,
-              10
+              8000,
+              24000,
+              8000
             ]
           },
           {
-            fillColor : "rgba(188,188,188,0.5)",
-            strokeColor : "rgba(188,188,188,0.8)",
-            highlightFill: "rgba(188,188,188,0.75)",
-            highlightStroke: "rgba(188,188,188,1)",
+            fillColor : "#FDB45C",
+            strokeColor : "#FDB45C",
+            highlightFill: "#FFC870",
+            highlightStroke: "#FFC870",
             label: "Development",
             data : [
-              10,
-              10,
-              10
+              16000,
+              32000,
+              8000
             ]
           },
           {
-            fillColor : "rgba(188,188,188,0.5)",
-            strokeColor : "rgba(188,188,188,0.8)",
-            highlightFill: "rgba(188,188,188,0.75)",
-            highlightStroke: "rgba(188,188,188,1)",
-            label: "PM",
-            data : [
-              10,
-              10,
-              10
-            ]
-          },
-          {
-            fillColor : "rgba(168,187,205,0.5)",
-            strokeColor : "rgba(168,187,205,0.8)",
-            highlightFill : "rgba(168,187,205,0.75)",
-            highlightStroke : "rgba(168,187,205,1)",
+            fillColor : "#4D5360",
+            strokeColor : "#4D5360",
+            highlightFill: "#616774",
+            highlightStroke: "#616774",
             label: "Testing/QA",
             data : [
-              10,
-              10,
-              10
+              0,
+              0,
+              16000
+            ]
+          },
+          {
+            fillColor : "#4cae4c",
+            strokeColor : "#4cae4c",
+            highlightFill : "#5cb85c",
+            highlightStroke : "#5cb85c",
+            label: "PM",
+            data : [
+              3840,
+              5760,
+              3200
             ]
           }
         ]
@@ -160,7 +174,7 @@
         window.myBar = new Chart(ctx).Bar(barChartData, {
           responsive: true,
           showTooltips: true,
-          multiTooltipTemplate: "<%= datasetLabel %>: <%= value %>",
+          multiTooltipTemplate: "<%= datasetLabel %>: $<%= addCommas(value) %>",
         });
       });
     }
@@ -168,25 +182,25 @@
       // Data for pie chart
       var pieData = [
         {
-          value: 120,
+          value: 32000.00,
           color:"#09afdf",
           highlight: "#6BD5F4",
-          label: "Development"
-        },
-        {
-          value: 120,
-          color: "#FDB45C",
-          highlight: "#FFC870",
           label: "Design"
         },
         {
-          value: 120,
+          value: 64000.00,
+          color: "#FDB45C",
+          highlight: "#FFC870",
+          label: "Development"
+        },
+        {
+          value: 16000.00,
           color: "#4D5360",
           highlight: "#616774",
           label: "Testing/QA"
         },
         {
-          value: 120,
+          value: 12800.00,
           color: "#4cae4c",
           highlight: "#5cb85c",
           label: "Project Management"
@@ -196,7 +210,9 @@
       // Pie Chart Initialization
       $(window).load(function() {
         var ctx = document.getElementById("pie-graph").getContext("2d");
-        window.myPie = new Chart(ctx).Pie(pieData);
+        window.myPie = new Chart(ctx).Pie(pieData, {
+          tooltipTemplate: "<%= label %>: $<%= addCommas(value) %>"
+        });
       });
     }
   }); // End document ready
