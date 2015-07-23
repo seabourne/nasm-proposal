@@ -14,43 +14,43 @@
   <div class="clearfix">
     <div class="col-md-3 col-xs-6 text-center">
       <div class="feature-box object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn" data-effect-delay="300">
-        <span class="icon dark-bg large circle"><i class="fa fa-diamond"></i></span>
-        <h3><strong>Starts</strong></h3>
-        <span class="counter counting" data-to="1525" data-speed="5000">1525</span>
+        <span class="icon dark-bg large circle"><i class="fa fa-play"></i></span>
+        <h3><strong>Plays</strong></h3>
+        <span class="counter" id="plays_count"></span>
       </div>
     </div>
     <div class="col-md-3 col-xs-6 text-center">
       <div class="feature-box object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn" data-effect-delay="300">
-        <span class="icon dark-bg large circle"><i class="fa fa-users"></i></span>
+        <span class="icon dark-bg large circle"><i class="fa fa-certificate"></i></span>
         <h3><strong>Completions</strong></h3>
-        <span class="counter counting" data-to="1225" data-speed="5000">1225</span>
+        <span id="completions_count" class="counter counting" ></span>
       </div>
     </div>
     <div class="col-md-3 col-xs-6 text-center">
       <div class="feature-box object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn" data-effect-delay="300">
-        <span class="icon dark-bg large circle"><i class="fa fa-cloud-download"></i></span>
+        <span class="icon dark-bg large circle"><i class="fa fa-check"></i></span>
         <h3><strong>Correct Answers</strong></h3>
-        <span class="counter counting" data-to="12235" data-speed="5000">12235</span>
+        <span class="counter counting" id="correct_count"></span>
       </div>
     </div>
     <div class="col-md-3 col-xs-6 text-center">
       <div class="feature-box object-non-visible animated object-visible fadeIn" data-animation-effect="fadeIn" data-effect-delay="300">
-        <span class="icon dark-bg large circle"><i class="fa fa-share"></i></span>
+        <span class="icon dark-bg large circle"><i class="fa fa-close"></i></span>
         <h3><strong>Incorrect Answers</strong></h3>
-        <span class="counter counting" data-to="15002" data-speed="5000">15002</span>
+        <span class="counter counting" id="incorrect_count"></span>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 text-center">
+    <div class="col-md-4 col-md-offset-1 text-center">
       <h2>Question Breakdown</h2>
-      <canvas class="graph bar" id="bars-graph" height="210" width="270"></canvas>
+      <canvas class="bar" id="bars-graph" height="210" width="270" ></canvas>
       <br>
       <br>
     </div>
-    <div class="col-md-6  text-center">
+    <div class="col-md-4 col-md-offset-1  text-center">
       <h2>Usage this week</h2>
-      <canvas class="graph line" id="lines-graph" height="210" width="270"></canvas>
+      <canvas class="line" id="lines-graph" height="210" width="270"></canvas>
       <br>
       <br>
     </div>
