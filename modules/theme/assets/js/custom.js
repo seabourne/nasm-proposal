@@ -263,7 +263,7 @@ function addCommas(nStr)
       });
     }
 
-    if($(".stats").length > 0) {
+    if($(".stats-page").length > 0) {
       getStarts();
       getCompletions();  
       getAnswers();
