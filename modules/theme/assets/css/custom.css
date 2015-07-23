@@ -11,6 +11,9 @@ File Description: Place here your custom CSS styles
 .nasm-background {
   background: url('http://airandspace.si.edu/webimages/highres/WEB10761-2007h.jpg') 50% 0px no-repeat;
 }
+.network-background {
+  background: url('/assets/template/images/background_network_new.jpg') 0px 0px repeat-y;
+}
 
 .nasm-background-bottom {
   background: url('http://airandspace.si.edu/webimages/highres/WEB10761-2007h.jpg') 50% 0 no-repeat;

@@ -97,6 +97,108 @@
     if($("#correct").length > 0) {
       renderStatsPage()
     }
+
+    if ($(".budget.bar").length>0) {
+      // Data for bar charts
+      var barChartData = {
+        labels : ["August","September","October"],
+        datasets : [
+          {
+            fillColor : "rgba(188,188,188,0.5)",
+            strokeColor : "rgba(188,188,188,0.8)",
+            highlightFill: "rgba(188,188,188,0.75)",
+            highlightStroke: "rgba(188,188,188,1)",
+            label: "Design",
+            data : [
+              10,
+              10,
+              10
+            ]
+          },
+          {
+            fillColor : "rgba(188,188,188,0.5)",
+            strokeColor : "rgba(188,188,188,0.8)",
+            highlightFill: "rgba(188,188,188,0.75)",
+            highlightStroke: "rgba(188,188,188,1)",
+            label: "Development",
+            data : [
+              10,
+              10,
+              10
+            ]
+          },
+          {
+            fillColor : "rgba(188,188,188,0.5)",
+            strokeColor : "rgba(188,188,188,0.8)",
+            highlightFill: "rgba(188,188,188,0.75)",
+            highlightStroke: "rgba(188,188,188,1)",
+            label: "PM",
+            data : [
+              10,
+              10,
+              10
+            ]
+          },
+          {
+            fillColor : "rgba(168,187,205,0.5)",
+            strokeColor : "rgba(168,187,205,0.8)",
+            highlightFill : "rgba(168,187,205,0.75)",
+            highlightStroke : "rgba(168,187,205,1)",
+            label: "Testing/QA",
+            data : [
+              10,
+              10,
+              10
+            ]
+          }
+        ]
+      }
+      
+      // Bar Charts Initialization    
+      $(window).load(function() {
+        var ctx = document.getElementById("bars-graph").getContext("2d");
+        window.myBar = new Chart(ctx).Bar(barChartData, {
+          responsive: true,
+          showTooltips: true,
+          multiTooltipTemplate: "<%= datasetLabel %>: <%= value %>",
+        });
+      });
+    }
+    if ($(".budget.pie").length>0) {     
+      // Data for pie chart
+      var pieData = [
+        {
+          value: 120,
+          color:"#09afdf",
+          highlight: "#6BD5F4",
+          label: "Development"
+        },
+        {
+          value: 120,
+          color: "#FDB45C",
+          highlight: "#FFC870",
+          label: "Design"
+        },
+        {
+          value: 120,
+          color: "#4D5360",
+          highlight: "#616774",
+          label: "Testing/QA"
+        },
+        {
+          value: 120,
+          color: "#4cae4c",
+          highlight: "#5cb85c",
+          label: "Project Management"
+        }
+      ];
+
+      // Pie Chart Initialization
+      $(window).load(function() {
+        var ctx = document.getElementById("pie-graph").getContext("2d");
+        window.myPie = new Chart(ctx).Pie(pieData);
+      });
+    }
   }); // End document ready
 
 })(this.jQuery);
