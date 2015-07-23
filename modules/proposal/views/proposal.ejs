@@ -101,7 +101,8 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <h3 class="title">We are a unique fit for this project</h3>
+              <h3>We are a <span class="text-default">unique fit</span> for GEER + NASM</h3>
+              <div class="separator-2"></div>
               <p>We are a little different than most technology firms. Our team is deeply experienced building apps that engage and inform users.</p>
               <p>We work in a range of difference industries solving problems that require hard-core engineering talent and great user experience design.</p>
               <ul class="list-icons">
@@ -112,15 +113,97 @@
               </ul>
             </div>
             <div class="col-md-6">
-              <div class="overlay-container overlay-visible">
-                <img src="/assets/template/images/section-image-5.jpg" alt="">
-                <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
-                <div class="overlay-bottom hidden-xs">
-                  <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nobis sunt, quae alias impedit ea molestias recusandae.
+              <h3>How we <span class="text-default">built</span> the game</h3>
+              <div class="separator-2"></div>
+              <!-- accordion start -->
+              <!-- ================ -->
+              <div class="panel-group collapse-style-2" id="accordion-2" >
+                <div class="panel panel-default" aria-expanded="true">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-2" aria-expanded="true" >
+                        <i class="fa fa-eye pr-10"></i>Design
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne-2" class="panel-collapse collapse in" aria-expanded="true">
+                    <div class="panel-body bordered p-15">
+                      First, we brainstormed what a simple game should look like, and how it could flow. We designed using a mobile first strategy, ensuring a responsive design which could scale up to larger tablet and desktop screens.
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion-2" href="#collapseTwo-2" class="collapsed" aria-expanded="false">
+                        <i class="fa fa-leaf pr-10"></i>Environment Setup
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo-2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="panel-body bordered p-15">
+                      Next, we created an initial deployment environment on AWS using Elastic Beanstalk, Elastic Load Balancer and CloudFront CDN. Because the environment is clustered, it will automatically scale as more users interact with the game.
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-2" class="collapsed" aria-expanded="false">
+                        <i class="fa fa-gears pr-10"></i>Configuration
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree-2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="panel-body bordered p-15">
+                      Once the environment was deployed, we created a GitHub repository and added in open source components. We used a mix of popular NodeJS modules, as well as some core modules we have developed for similar projects. Because of this re-use, we were able to get an initial skeleton app deployed in less than an hour.
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFour-2" class="collapsed" aria-expanded="false">
+                        <i class="fa-code fa pr-10"></i>Code Development
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFour-2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="panel-body bordered p-15">
+                      Using a modular architecture, we wrote new code for the landing page, quiz, stats and this proposal. Development was iterative, with contributions made to the GitHub repository as development progressed.
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFive-2" class="collapsed" aria-expanded="false">
+                        <i class="fa-check fa pr-10"></i>Testing
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFive-2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="panel-body bordered p-15">
+                      Once the project was code complete, we began testing using a combination of automated unit tests, as well as functional tests across devices using AWS Device Farm. This ensured that the application works seamlessly on the most common mobile devices.
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion-2" href="#collapseSix-2" class="collapsed" aria-expanded="false">
+                        <i class="fa-road fa pr-10"></i>Deployment
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseSix-2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="panel-body bordered p-15">
+                      Finally, we deployed our code to the production AWS enviroment using Elastic Beanstalk.  Because of the automation employed to create, configure and develop the application, this was the easiest part of the whole project.
+                    </div>
                   </div>
                 </div>
               </div>
+              <!-- accordion end -->
             </div>
           </div>
         </div>
