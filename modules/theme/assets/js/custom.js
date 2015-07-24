@@ -52,7 +52,8 @@ function addCommas(nStr)
 
       for(var i = 0; i < 4; i++) {
         var answer = questions[i] && questions[i].correct ? correctTemplate : incorrectTemplate;
-        answer += questions[i].answerText+"</li>"
+        if(questions[i])
+          answer += questions[i].answerText+"</li>"
         $("#answerList").append(answer)
       }
 
@@ -210,7 +211,7 @@ function addCommas(nStr)
         ]
       }
       var ctx = document.getElementById("bars-graph").getContext("2d");
-      $("#lines-graph").prev().remove()
+      $("#bars-graph").prev().remove()
       window.myBar = new Chart(ctx).Bar(barChartData, {
         //responsive: true,
         showTooltips: true,
