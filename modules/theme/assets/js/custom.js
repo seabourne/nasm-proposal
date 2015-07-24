@@ -117,7 +117,7 @@ function addCommas(nStr)
       
       client.run(query, function(err, response){
         if(err) return console.log('err', err)
-        $("#plays_count").html(response.result)
+        $("#plays_count").html(response.result).prev().remove()
         
       });    
     }
@@ -130,7 +130,7 @@ function addCommas(nStr)
       
       client.run(query, function(err, response){
         if(err) return console.log('err', err)
-        $("#completions_count").html(response.result)
+        $("#completions_count").html(response.result).prev().remove()
         
       }); 
     }
@@ -144,8 +144,8 @@ function addCommas(nStr)
       
       client.run(query, function(err, response){
         if(err) return console.log('err', err)
-        $("#correct_count").html(_.findWhere(response.result, {correct:true}).result);
-        $("#incorrect_count").html(_.findWhere(response.result, {correct:false}).result);
+        $("#correct_count").html(_.findWhere(response.result, {correct:true}).result).prev().remove();
+        $("#incorrect_count").html(_.findWhere(response.result, {correct:false}).result).prev().remove();
       });
     }
 
@@ -210,6 +210,7 @@ function addCommas(nStr)
         ]
       }
       var ctx = document.getElementById("bars-graph").getContext("2d");
+      $("#lines-graph").prev().remove()
       window.myBar = new Chart(ctx).Bar(barChartData, {
         //responsive: true,
         showTooltips: true,
@@ -255,6 +256,7 @@ function addCommas(nStr)
 
         // Line Charts Initialization
         var ctx = document.getElementById("lines-graph").getContext("2d");
+        $("#lines-graph").prev().remove()
         window.newLine = new Chart(ctx).Line(lineChartData, {
           //responsive: true,
           bezierCurve : false,
