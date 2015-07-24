@@ -152,30 +152,37 @@ function addCommas(nStr)
 
     var getAnswerBreakdown = function() {
       var answers = []
-      getAnswersForQuestion(1, answers, function(answers) {
-        getAnswersForQuestion(2, answers, function(answers) {
-          getAnswersForQuestion(3, answers, function(answers) {
-            getAnswersForQuestion(4, answers, function(answers) {
-              drawAnswerBreakdown(answers)
-            })
-          })
-        })
+      getAnswersForQuestion(answers, function(answers) {
+        drawAnswerBreakdown(answers)
       })
     }
 
-    var getAnswersForQuestion = function (questionId, answers, cb) {
-      var query = new Keen.Query("count", {
+    var getAnswersForQuestion = function (answers, cb) {
+      var queryFalse = new Keen.Query("count", {
         eventCollection: "answer",
-        filters: [{"operator":"eq","property_name":"questionId","property_value":questionId}],
-        groupBy: "correct",
+        filters: [{"operator":"eq","property_name":"correct","property_value":false}],
+        groupBy: "questionId",
+        timezone: "UTC"
+      });
+
+      var queryTrue = new Keen.Query("count", {
+        eventCollection: "answer",
+        filters: [{"operator":"eq","property_name":"correct","property_value":true}],
+        groupBy: "questionId",
         timezone: "UTC"
       });
       
-      client.run(query, function(err, response){
-        if(err) return console.log('err', err)
-        var res = _.map(response.result, function(e) {e.questionId = questionId; return e})
+      var process = function(prop, response, cb) {
+        var res = _.map(response.result, function(e) {e.correct = prop; return e})
         answers = answers.concat(res)
         if(cb) cb(answers)
+      }
+
+      client.run([queryFalse, queryTrue], function(err, response){
+        if(err) return console.log('err', err)
+        process(false, response[0], function(answers) {
+          process(true, response[1], cb)
+        })
       });
     }
 
@@ -291,8 +298,8 @@ function addCommas(nStr)
             label: "Design",
             data : [
               8000,
-              24000,
-              8000
+              20000,
+              4000
             ]
           },
           {
@@ -302,9 +309,9 @@ function addCommas(nStr)
             highlightStroke: "#FFC870",
             label: "Development",
             data : [
-              16000,
-              32000,
-              8000
+              24000,
+              36000,
+              4000
             ]
           },
           {
@@ -315,8 +322,8 @@ function addCommas(nStr)
             label: "Testing/QA",
             data : [
               0,
-              0,
-              16000
+              12000,
+              4000
             ]
           },
           {
@@ -326,9 +333,9 @@ function addCommas(nStr)
             highlightStroke : "#5cb85c",
             label: "PM",
             data : [
-              3840,
-              5760,
-              3200
+              3520,
+              7200,
+              2000
             ]
           }
         ]
@@ -366,7 +373,7 @@ function addCommas(nStr)
           label: "Testing/QA"
         },
         {
-          value: 12800.00,
+          value: 12700.00,
           color: "#4cae4c",
           highlight: "#5cb85c",
           label: "Project Management"
