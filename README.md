@@ -15,7 +15,7 @@ NodeJS/NPM: `> brew install node`
 First you'll need to clone this repository to your computer (assuming you already know Git, etc).
 
 ```
-> git clone git@github.com:seabourne/nasm-proposal.git
+> git clone https://github.com/seabourne/nasm-proposal.git
 ```
 
 Next, you'll need to install the dependencies.
@@ -32,3 +32,21 @@ Finally, you can start the app with:
 ```
 
 and open [http://localhost:3000/](http://localhost:3000/) in your browser.  That's it!
+
+## Anatomy of the Application
+
+The NASM Game app is based on the [Nxus](https://github.com/nxus/core) application.
+
+The core functionality is split between server and client side code.
+
+### Server
+
+The server logic can be found under the [modules folder](https://github.com/seabourne/nasm-proposal/tree/master/modules).
+
+### Client
+
+The client logic is largely in [/modules/theme/assets/js/custom.js](https://github.com/seabourne/nasm-proposal/blob/master/modules/theme/assets/js/custom.js)
+
+### Events
+
+We are using [Keen.io](http://www.keen.io) to capture the user events and generate the aggregations and anlaysis.
