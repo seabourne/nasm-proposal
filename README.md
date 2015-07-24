@@ -6,6 +6,7 @@ Hello GEER and NASM! This is the technical README for the NASM Game Prototype an
 
 You'll need the following libraries installed locally.  We recommend using [Homebrew](http://brew.sh/).
 
+Git: `> brew install git`
 NodeJS/NPM: `> brew install node`
 
 ## Installation
